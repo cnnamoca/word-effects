@@ -33,65 +33,70 @@ int main(int argc, const char * argv[]) {
         //        //print NSString Object
         //        NSLog (@"Input was %@", [inputString uppercaseString]);
         
+        
+        char decision;
         int choice;
         char inputChars[255];
-        printf ("input a string:");
+        
+        printf ("Check these options out!\n");
+        printf ("1: Uppercase\n");
+        printf ("2: Lowercase\n");
+        printf ("3: Numberize (Write a number and I'll convert it into an integer!)\n");
+        printf ("4: Canadianize\n");
+        printf ("5: Respond (Try adding a '?' or '!' in the end of your sentence)\n");
+        printf ("6: De-space-it\n\n");
+        
+        printf ("input a string: ");
         fgets (inputChars, 255, stdin);
         printf ("your string is: %s \n", inputChars);
         NSString *tempInputString = [NSString stringWithUTF8String: inputChars];
         NSString *inputString = [tempInputString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
         
+        printf ("Shall we do some WORD PLAY? y/n: ");
+        scanf ("%c", &decision);
         
-        printf ("1: Uppercase\n");
-        printf ("2: Lowercase\n");
-        printf ("3: Numberize (Write a number and I'll convert it into an integer!)\n");
-        printf ("4: Canadianize\n");
-        printf ("5: Respond (Try adding a '?' or '!' in the end of your sentence \n");
-        printf ("6: De-space-it\n\n");
-        
-        printf ("Select an option:\n");
-        scanf("%d", &choice);
-        
-        
-        
-        switch(choice){
-            case 1: NSLog (@"Input was %@", [inputString uppercaseString]); break;
+        while (decision == 'y') {
             
-            case 2: NSLog (@"Input was %@", [inputString lowercaseString]); break;
+            printf ("Select an option: ");
+            scanf("%d", &choice);
             
-            case 3: NSLog (@"Input was %ld", (long)[inputString integerValue]); break;
-
-            case 4:
-                NSLog (@"Input was %@", [inputString stringByAppendingString:@"eh"]);
-                break;
             
-            case 5:
-            //REMEMBER TO PUT {} FOR CASES LIKE THESE
-            {
+            
+            switch(choice){
+                case 1: NSLog (@"Input was %@", [inputString uppercaseString]); break;
                 
-                NSString *lastCharacter = [inputString substringFromIndex:[inputString length] - 1];
-                if ([lastCharacter isEqualToString:@"!"]) {
-                    NSLog (@"Whoa, calm down!");
-                    break;
-                } else if ([lastCharacter isEqualToString:@"?"]) {
-                    NSLog (@"I don't know :/");
+                case 2: NSLog (@"Input was %@", [inputString lowercaseString]); break;
+                
+                case 3: NSLog (@"Input was %ld", (long)[inputString integerValue]); break;
+                
+                case 4:
+                NSLog (@"Input was %@", [inputString stringByAppendingString:@" eh"]);
+                break;
+                
+                case 5:
+                //REMEMBER TO PUT {} FOR CASES LIKE THESE
+                    {
+                        NSString *lastCharacter = [inputString substringFromIndex:[inputString length] - 1];
+                        if ([lastCharacter isEqualToString:@"!"]) {
+                        NSLog (@"Whoa, calm down!");
+                        break;
+                        } else if ([lastCharacter isEqualToString:@"?"]) {
+                        NSLog (@"I don't know :/");
+                        }
+                        break;
+                    }
+                
+                case 6: NSLog (@"Input was %@", [inputString stringByReplacingOccurrencesOfString:@" " withString:@"-"]); break;
+                
+                
+                default:
+                break;
                 }
-                break;
-                
+            printf ("Shall we do some WORD PLAY again? y/n:");
+            scanf (" %c", &decision);
+                }
+            printf ("SEEYA!\n");
             }
-            
-            case 6: NSLog (@"Input was %@", [inputString stringByReplacingOccurrencesOfString:@" " withString:@"-"]); break;
-            
-            
-            default:
-            break;
-        }
-        
-    }
-    
-    
-    
-    
     
     return 0;
 }
