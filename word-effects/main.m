@@ -60,18 +60,22 @@ int main(int argc, const char * argv[]) {
             printf ("Select an option: ");
             scanf("%d", &choice);
             
-            
-            
             switch(choice){
-                case 1: NSLog (@"Input was %@", [inputString uppercaseString]); break;
+                case 1:
+                    NSLog (@"Input was %@", [inputString uppercaseString]);
+                    break;
                 
-                case 2: NSLog (@"Input was %@", [inputString lowercaseString]); break;
+                case 2:
+                    NSLog (@"Input was %@", [inputString lowercaseString]);
+                    break;
                 
-                case 3: NSLog (@"Input was %ld", (long)[inputString integerValue]); break;
+                case 3:
+                    NSLog (@"Input was %ld", (long)[inputString integerValue]);
+                    break;
                 
                 case 4:
-                NSLog (@"Input was %@", [inputString stringByAppendingString:@" eh"]);
-                break;
+                    NSLog (@"Input was %@", [inputString stringByAppendingString:@" eh"]);
+                    break;
                 
                 case 5:
                 //REMEMBER TO PUT {} FOR CASES LIKE THESE
@@ -86,8 +90,9 @@ int main(int argc, const char * argv[]) {
                         break;
                     }
                 
-                case 6: NSLog (@"Input was %@", [inputString stringByReplacingOccurrencesOfString:@" " withString:@"-"]); break;
-                
+                case 6:
+                    NSLog (@"Input was %@", [inputString stringByReplacingOccurrencesOfString:@" " withString:@"-"]);
+                    break;
                 
                 default:
                 break;
