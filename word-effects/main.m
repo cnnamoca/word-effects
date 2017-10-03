@@ -42,7 +42,7 @@ int main(int argc, const char * argv[]) {
         
         printf ("1: Uppercase\n");
         printf ("2: Lowercase\n");
-        printf ("3: Numberize\n");
+        printf ("3: Numberize (Write a number and I'll convert it into an integer!)\n");
         printf ("4: Canadianize\n");
         printf ("5: Respond\n");
         printf ("6: De-space-it\n\n");
@@ -53,6 +53,10 @@ int main(int argc, const char * argv[]) {
         switch(choice){
             case 1: NSLog (@"Input was %@", [inputString uppercaseString]); break;
             case 2: NSLog (@"Input was %@", [inputString lowercaseString]); break;
+            
+            //still need to check this
+            case 3: NSLog (@"Input was %ld", (long)[inputString integerValue]); break;
+
             case 4: NSLog (@"Input was %@", [inputString stringByAppendingString:@"eh"]); break;
             
             
