@@ -52,7 +52,7 @@ int main(int argc, const char * argv[]) {
         NSString *tempInputString = [NSString stringWithUTF8String: inputChars];
         NSString *inputString = [tempInputString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
         
-        printf ("Shall we do some WORD PLAY? y/n: ");
+        printf ("Shall we do some WORD PLAY on your string? y/n: ");
         scanf ("%c", &decision);
         
         while (decision == 'y') {
@@ -97,7 +97,7 @@ int main(int argc, const char * argv[]) {
                 default:
                 break;
                 }
-            printf ("Shall we do some WORD PLAY again? y/n:");
+            printf ("Wanna try another option? y/n:");
             scanf (" %c", &decision);
                 }
             printf ("SEEYA!\n");
