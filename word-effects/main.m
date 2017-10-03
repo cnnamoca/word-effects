@@ -59,6 +59,8 @@ int main(int argc, const char * argv[]) {
 
             case 4: NSLog (@"Input was %@", [inputString stringByAppendingString:@"eh"]); break;
             
+            case 6: NSLog (@"Input was %@", [inputString stringByReplacingOccurrencesOfString:@" " withString:@"-"]); break;
+            
             
             default:
             break;
